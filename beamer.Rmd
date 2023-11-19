@@ -1,0 +1,73 @@
+---
+title: "Game Theory"
+subtitle: "Static and Complete Information Games"
+output: beamer_presentation
+header-includes:
+  - \usepackage{setspace}
+  - \usepackage{amsmath}
+  - \usepackage{tikz}
+  - \setbeamertemplate{itemize subitem}[square]
+  
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+## Titles
+\begin{itemize}
+  \item Notes
+  \item Mathematical Notations
+  \item Dominant Strategy Games
+  \item Different Types of Games 
+  \begin{itemize}
+    \item Prisoners' Dilemma
+    \item Hunt Game
+    \item Manhattan Game
+    \end{itemize}
+\end{itemize}
+
+## Some Notes and Assumptions
+\begin{itemize}
+  \item We assume that players are rational (means that selects the choice which gives him/her the maximum payoff).
+  \item Other than rationality assumption, we also assume that each players know that all the other players are rational, which is a different and more strong assumption from the rationality assumption of each players.
+  \item And for this case, the discreet games, there are finite numbers of strategies for each player.
+  \end{itemize}
+
+## Mathematical Notations
+$$\textrm{Number of Players}=n$$
+$$\textrm{Set of Possible Strategies for ith Player}=S_i=\{s_i^1,s_i^2...s_i^m\}$$
+$$\textrm{Utility of ith Player from the Strategies of Players}=u_i(s_i,s_{-i})$$
+
+## Dominant Strategy Games
+\begin{itemize}
+  \item In this kind of games, players will be able to eliminate some of their choices, which narrows down to the dominant strategy
+  \end{itemize}
+
+## Dominant Strategy Games 
+
+$$\begin{pmatrix}&L&R\\L&0,0&0,2\\R&2,0&1,1\end{pmatrix}$$
+
+\begin{itemize}
+  \item Since in this game, for the first player, irrespective of second player's strategy, he/she should choose $R$ because if second player choose $L$, in order to maximize its payoff, it should choose $R$, which is $2$. And it is also valid if second play $R$. Thus we can eliminate the choice of $L$ for first player, which means that the $L$ is dominated by $R$
+  \item This interpretation should be carried for second player as well. Which eliminates the choice of $L$ and means that $R$ dominates $L$.
+\end{itemize}
+
+## Dominant Strategy Games
+$$\begin{pmatrix}&L&R\\
+\rlap{\rule[0.6ex]{2.1cm}{1pt}}L&0,\makebox(-6,0){\rule[1ex]{1pt}{3\normalbaselineskip}}0&0,2\\
+R&2,0&1,1\end{pmatrix}$$
+\begin{itemize}
+  \item As we have indicated, irrespective of the choice of their competitors, both player will eliminate the choice of $L$. We can show it mathematically:
+  $$u_1(R,L)>u_1(L,L)\;|\;u_1(R,R)>u_1(R,R)$$
+  $$u_2(L,R)>u_2(L,L)\;|\;u_2(R,R)>u_2(R,L)$$
+  \end{itemize}
+  
+## Dominant Strategy Games
+\begin{itemize}
+  \item Thus, we have only the solution of right and right.
+  $$\{R,R\}$$
+  \item We call this solution as Dominant Strategy Equilibrium.
+  \end{itemize}
+
+
+  
