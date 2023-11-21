@@ -3,27 +3,21 @@ title: "Game Theory"
 subtitle: "Static and Complete Information Games"
 output: beamer_presentation
 header-includes:
-  - \usepackage{setspace}
   - \usepackage{amsmath}
   - \usepackage{tikz}
   - \setbeamertemplate{itemize subitem}[square]
+  - \usepackage{nicematrix}
   
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-## Titles
+## Contents
 \begin{itemize}
   \item Notes
   \item Mathematical Notations
   \item Dominant Strategy Games
-  \item Different Types of Games 
-  \begin{itemize}
-    \item Prisoners' Dilemma
-    \item Hunt Game
-    \item Manhattan Game
-    \end{itemize}
 \end{itemize}
 
 ## Some Notes and Assumptions
@@ -45,7 +39,11 @@ $$\textrm{Utility of ith Player from the Strategies of Players}=u_i(s_i,s_{-i})$
 
 ## Dominant Strategy Games 
 
-$$\begin{pmatrix}&L&R\\L&0,0&0,2\\R&2,0&1,1\end{pmatrix}$$
+$$\begin{NiceTabular}{ccc}[cell-space-limits=3pt]
+  & L & R\\
+  L & \Block[hvlines]{2-2}{} (0,0) &(0,2)\\
+  R &(2,0) & (1,1)
+  \end{NiceTabular}$$
 
 \begin{itemize}
   \item Since in this game, for the first player, irrespective of second player's strategy, he/she should choose $R$ because if second player choose $L$, in order to maximize its payoff, it should choose $R$, which is $2$. And it is also valid if second play $R$. Thus we can eliminate the choice of $L$ for first player, which means that the $L$ is dominated by $R$
@@ -53,9 +51,12 @@ $$\begin{pmatrix}&L&R\\L&0,0&0,2\\R&2,0&1,1\end{pmatrix}$$
 \end{itemize}
 
 ## Dominant Strategy Games
-$$\begin{pmatrix}&L&R\\
-\rlap{\rule[0.6ex]{2.1cm}{1pt}}L&0,\makebox(-6,0){\rule[1ex]{1pt}{3\normalbaselineskip}}0&0,2\\
-R&2,0&1,1\end{pmatrix}$$
+$$\begin{NiceTabular}{ccc}[cell-space-limits=3pt]
+  & L & R\\
+  \rlap{\rule[0.6ex]{3cm}{1pt}}L & \Block[hvlines]{2-2}{} (0,\makebox(-3,-3.5){\rule[1ex]{1pt}{4\normalbaselineskip}}0) &(0,2)\\
+  R &(2,0) & (1,1)
+  \end{NiceTabular}$$
+
 \begin{itemize}
   \item As we have indicated, irrespective of the choice of their competitors, both player will eliminate the choice of $L$. We can show it mathematically:
   $$u_1(R,L)>u_1(L,L)\;|\;u_1(R,R)>u_1(R,R)$$
@@ -68,6 +69,5 @@ R&2,0&1,1\end{pmatrix}$$
   $$\{R,R\}$$
   \item We call this solution as Dominant Strategy Equilibrium.
   \end{itemize}
-
 
   
