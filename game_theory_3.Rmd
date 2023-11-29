@@ -1,0 +1,73 @@
+---
+title: "Game Theory"
+subtitle: |
+  |  Different Types of Games: Hunt Game
+  |   (Static and Complete Information Games)
+output: beamer_presentation
+header-includes:
+  - \setbeamertemplate{itemize subitem}[square]
+  - \usepackage{nicematrix}
+---
+
+## Contents
+\begin{itemize}
+  \item Hunt Game
+  \item Manhattan Game
+  \item Matching Pennies
+\end{itemize}
+
+## Hunt Game
+\begin{itemize}
+  \item Consider two different cavemen in stone age. In order to survive they have to hunt. Assume that there are two choices, namely hunt a stag or hunt a bison.
+\end{itemize}
+
+$$\begin{NiceTabular}{ccc}[cell-space-limits=3pt] & S & B\\
+S &\Block[hvlines]{2-2}{} (1,1)& (1,0)\\
+B & (0,1) & (3,3) \end{NiceTabular}$$
+
+\begin{itemize}
+  \item Since we evaluate static and complete information games, we assume that these two cavemen do not know what other caveman's decision on game. 
+  \item Thus, the Nash Equilibrium which would try to find uses just a hypothetical assumption for each player's decision on other player.
+\end{itemize}
+
+## Hunt Game
+\begin{itemize}
+  \item We can show it mathematically:
+\end{itemize}
+$$\{\nexists s_1^{'} \in S_1 : u_1(s_1^{'},s_2) > u_1(s_1,s_2)\} \wedge \{\nexists s_2^{'} \in S_2 : u_2(s_1,s_2^{'}) > u_2(s_1,s_2)\}$$
+\begin{itemize}
+  \item This notation represents that there is not any other strategy for first player ($s_1^{'}$) which is an element of all other possible strategies for first player ($S_1$), such that the utility of first player for all other possible strategies and second players Nash strategy ($s_2$) is bigger than the utility of first player for Nash strategies of first and second player (the first part) and ($\wedge$) there is not any other strategy for second player ($s_2^{'}$) which is an element of all other possible strategies for second player ($S_2$), such that the utility of second player for all other possible strategies and first players Nash strategy ($s_1$) is bigger than the utility of second player for Nash strategies of first and second player.
+\end{itemize}
+
+## Hunt Game
+\begin{itemize}
+  \item As you might guess there are two different Nash Equilibriums:
+\end{itemize}
+$$NE_1 = \{S,S\} \;,\; NE_2 = \{B,B\}$$
+
+\begin{itemize}
+  \item If the first player chooses to go for stag, then the optimal choice for second player is to go for stag as well. And if the first person expects second player to go for a stag, then he/she will stick to stag.
+\end{itemize}
+
+## Hunt Game
+\begin{itemize}
+  \item And this is also valid for the bison as well. Since bison will give more meat than a stag, the payoff for each player is higher in bison. And if a player expects other to go for a bison, he/she will not deviate to stag.
+  \item However, if one of them chooses stag and other one chooses bison, the player who chose bison will not be able to hunt the bison by him/herself, thus its payoff is 0. 
+\end{itemize}
+
+## Hunt Game
+\begin{itemize}
+  \item However, consider a case where the payoff that each player will get from a stag is very near to the payoff that each player will get when both choose bison is very near.
+\end{itemize}
+
+$$\begin{NiceTabular}{ccc}[cell-space-limits=3pt] &S&B\\
+S &\Block[hvlines]{2-2}{} (9,9) & (9,0)\\
+B & (0,9) & (10,10)\end{NiceTabular}$$
+\begin{itemize}
+  \item Since in this case, the payoff that players will receive from selecting to hunt a stag is not much lower than the payoff that both players will receive when they select to hunt a bison.
+  \item This makes much more hard to select to hunt a bison, due to riskiness to not receive the payoff of a stag. We call these types of games Risk Dominated games, because of risk of selecting a bison is higher than previously.
+\end{itemize}
+
+
+
+

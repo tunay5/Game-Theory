@@ -1,0 +1,6 @@
+---
+title: "Game Theory"
+subtitle: "Mixed Strategies"
+output: beamer_presentation
+---
+## Contents

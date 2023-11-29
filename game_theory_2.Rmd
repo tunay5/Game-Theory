@@ -1,6 +1,8 @@
 ---
 title: "Game Theory"
-subtitle: "Nash Equilibrium (Static and Complete Information Games)"
+subtitle: |
+  | Nash Equilibrium 
+  | (Static and Complete Information Games)
 output: beamer_presentation
 header-includes:
   - \setbeamertemplate{itemize subitem}[square]
@@ -55,7 +57,7 @@ $$\begin{NiceTabular}{ccc}[cell-space-limits=4pt]
 \end{itemize}
 
 
-## Different Types of Games: Prisoners' Dilemma
+## Prisoners' Dilemma
 \begin{itemize}
   \item One of the most famous game, known as Prisoners' Dilemma. In this game, the Nash Equilibrium is unique. And main feature of this equilibrium is that even though there is more beneficial solution where both players will receive more payoff, this equilibrium occurs due to the rationality of players.
   \item The name actually comes from interrogation of two players, which are suspected on a crime. Two players do not one what other player will do and they didn't communicate beforehand. So it is a simultaneous game.
@@ -98,8 +100,12 @@ Confess&(-10,0) & (-6,-6)
   \item As you can understand, the payoffs of Nash Equilibrium for this game is not a Pareto Optimal solution. 
   \item Since there is a choice where both players increase their payoffs, which is $\{0,0\}$
   \item I with mathematical notations, pareto optimality can be shown as:
-  $$u_i(s_{1}^{\ast},s_{2}^{\ast})>u_i(s_{1i},s_{2i})\;\; \forall \;\;i \in \{1,2...n\}$$
-  $$n=2$$
+    $$\{\nexists \omega^{'} \in \Omega\ : \forall i \;\; u_i(\omega^{'} ) \geq u_i(\omega) \wedge i \in \{1,2,3...n\}\}$$
+    $$n=2$$
+\begin{itemize}
+  \item This means, there is not an allocation ($\omega^{'}$) which is an element of all possible allocations ($\Omega$)such that for all $i$ its utility ($u_i(\omega^{'})$) is bigger than the utility that each player receive from the Nash Equilibrium allocation ($u_i(\omega)$).
+\end{itemize}
+  
 \end{itemize}
 
 ## Pareto Optimality

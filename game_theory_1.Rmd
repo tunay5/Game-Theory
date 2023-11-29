@@ -61,7 +61,14 @@ $$\begin{NiceTabular}{ccc}[cell-space-limits=3pt]
   \item As we have indicated, irrespective of the choice of their competitors, both player will eliminate the choice of $L$. We can show it mathematically:
   $$u_1(R,L)>u_1(L,L)\;|\;u_1(R,R)>u_1(R,R)$$
   $$u_2(L,R)>u_2(L,L)\;|\;u_2(R,R)>u_2(R,L)$$
-  \end{itemize}
+\end{itemize}
+
+## Dominant Strategy Games
+
+$$\{\nexists s_1^{'} \in S_1 : \forall i \;\; u_1(s_1^{'},s_{-i}) \geq u_1(s_1,s_{-i})\}$$
+\begin{itemize}
+  \item The last mathematical notation tells us that there is not any other strategy for first player ($s_1^{'}$) which is an element of all strategies for first player ($S_1$), such that for all i values ($\forall i$) utility of first player for any other strategy of first player ($s_1{'}$) is bigger than the utility of first player for a dominant strategy ($s_1$).
+\end{itemize}
   
 ## Dominant Strategy Games
 \begin{itemize}
