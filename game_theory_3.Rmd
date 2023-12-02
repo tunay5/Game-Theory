@@ -7,12 +7,13 @@ output: beamer_presentation
 header-includes:
   - \setbeamertemplate{itemize subitem}[square]
   - \usepackage{nicematrix}
+  - \usepackage{xcolor}
 ---
 
 ## Contents
 \begin{itemize}
   \item Hunt Game
-  \item Manhattan Game
+  \item Focal Point Games
   \item Matching Pennies
 \end{itemize}
 
@@ -68,6 +69,65 @@ B & (0,9) & (10,10)\end{NiceTabular}$$
   \item This makes much more hard to select to hunt a bison, due to riskiness to not receive the payoff of a stag. We call these types of games Risk Dominated games, because of risk of selecting a bison is higher than previously.
 \end{itemize}
 
+## Focal Point Games
+\begin{itemize}
+  \item Consider two person, who have arrived to New York City at the same time. They are unaware of their presence. And they were told that, if they could find each other in New York City (without previously communicated with each other), then they will win a big prize.
+  \item Then where should both choose to go? They should choose where every person would meet. Manhattan is a part of an area in New York City that can be attributed this feature.
+  \item Thus, the Manhattan will be focal point of this game where both find each other.
+\end{itemize}
+
+## Focal Point Games
+\begin{itemize}
+  \item We can give several examples from the book of Game Theory with Economic Applications.
+  \begin{itemize}
+    \item Name "heads" or "tails". If you and your partner name the same, you both win a prize; otherwise, you win nothing.
+    \item Circle one of the following numbers: 7, 100, 13, 261, 99, 555. You win if both your partner circle the same number.
+    \end{itemize}
+\end{itemize}
 
 
+## Focal Point Games
+\begin{itemize}
+  \item Consider a case where both players were given a 4 boxes, which one of them is red and remaining boxes are black. And players are expected to choice the same box.
+\end{itemize}
 
+\begin{center}
+  \fboxsep=6mm \fboxrule=1mm
+\fcolorbox{black}{black}{\null}
+    \fboxsep=6mm \fboxrule=1mm
+\fcolorbox{black}{black}{\null}
+\end{center}
+\begin{center}
+  \fboxsep=6mm \fboxrule=1mm
+\fcolorbox{black}{black}{\null}
+    \fboxsep=6mm \fboxrule=1mm
+\fcolorbox{black}{red}{\null}
+\end{center}
+
+\begin{itemize}
+  \item Since, the red one is only one, it can be separated from the other boxes (The main and only feature which separates the red box from other boxes).
+\end{itemize}
+
+
+## Focal Point Games
+\begin{itemize}
+  \item As you might guess, two players are going to select the red box, and reach an equilibrium, because of the reasons that we have explained.
+  \item There are collusion and coordination games, where both players' payoff will be great increase by applying a coordination with each other.
+\end{itemize}
+
+
+## Matching Pennies
+\begin{itemize}
+  \item In the Matching Pennies game, consider two person selects a side of a coin (either tail or head) simultaneously. If both select a head or tail, then first player will gain and second player will lose. If both select different sides, then first player would lose and second player will gain.
+\end{itemize}
+
+$$\begin{NiceTabular}{ccc}[cell-space-limits=3pt]&H&T\\
+H&\Block[hvlines]{2-2}{}(1,-1)&(-1,1)\\
+T&(-1,1)&(1,-1)\end{NiceTabular}$$
+
+## Matching Pennies
+\begin{itemize}
+  \item As you might guess, this game doesn't have any Nash Equilibrium.
+  \item Consider that first player selected Head. Then second player would choose Tail. However, if first player expects second player to play Tail, then he/she would change its preference, and deviate to Tail. Thus, we can reach an equilibrium in this case (for now).
+  \item So, in order to find the equilibrium of this game, we would employ a new method, Mixed Strategies. This method will handled in next chapter.
+\end{itemize}
