@@ -2,5 +2,181 @@
 title: "Game Theory"
 subtitle: "Mixed Strategies"
 output: beamer_presentation
+header-includes: 
+  - \usepackage{nicematrix}
 ---
 ## Contents
+
+\begin{itemize}
+  \item Mixed Strategies
+  \item Matching Pennies
+\end{itemize}
+
+## Mixed Strategies
+\begin{itemize}
+  \item As you may remember that, in previous chapter we have evaluated the discrete static complete information games. However, we couldn't find an equilibrium for the Matching Pennies game.
+  \item In order to find an equilibrium we should employ a different approach from the discrete understanding.
+\end{itemize}
+
+## Mixed Strategies
+\begin{itemize}
+  \item In this chapter, we will evaluate the continuous static games, in which there are infinite choices for each players. 
+  \item Consider a case where two firms decide to implement a price level. They have infinite amount of choices, with the constraint of not negative.
+  \item Our starting point will be the infinite choices and then we will introduce the probability concept in terms of discrete games.
+\end{itemize}
+
+## Mixed Strategies
+\begin{itemize}
+  \item Consider a simple case where two players' utility functions are given as:
+  $$U_A(S_A,S_B)=-S^2_A+4S_A+2S_AS_B+3S_B-S^2_B$$
+  $$U_B(S_A,S_B)=-S^2_B+2S_B+S_AS_B+S_A-S^2_A$$
+\end{itemize}
+
+## Mixed Strategies
+\begin{itemize}
+  \item As you can observe, the utilities that each player will acquire depends on the other player's strategy.
+  \item Since both players will try to maximize its utility, we should take the partial derivative of each utility with respect to their strategy and equalize both of them to $0$:
+  $$\frac{\partial{U_A}}{\partial{S_A}}=-2S_A+4+2S_B=0$$
+  $$\frac{{\partial{U_B}}}{\partial{S_B}}=-2S_B+2+S_A=0$$
+\end{itemize}
+
+## Mixed Strategies
+\begin{itemize}
+  \item If we rearrange the equations, we will get:
+  $$S_A=2+S_B$$
+  $$S_B=1+\frac{S_A}{2}$$
+  \item These equations are called Best Response Functions for player A and player B.
+  \item What we did was we have first taken the partial derivatives of each utility functions with respect to player's strategy and equalize to $0$. This means that, we held constant other variables in the equation and tried to find optimal strategy which maximizes the utility.
+\end{itemize}
+
+
+
+
+## Mixed Strategies
+```{r echo = FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.width=3,fig.height=3, fig.align='center'}
+library(ggplot2)
+x <- c(0:10)
+f_1 = function(z){
+  1+z/2
+}
+
+f_2 = function(z){
+  z-2
+}
+
+y_1 = f_1(0:10)
+y_2 = f_2(0:10)
+
+data_1 = data.frame(x,y_1,y_2)
+
+breaks <- c(0:10, 6)
+breaks_y <- c(0:10, 4)
+
+data_1 |> 
+  ggplot(aes(x = x, y = y_1)) +
+  geom_line()+
+  geom_line(aes(x = x, y = y_2), colour = "red")+
+  xlab("Player A's Strategy")+
+  ylab("Player B's Strategy")+
+  theme_bw()+
+  ylim(0,10)+
+  scale_x_continuous(breaks = breaks, limits = c(0,10))+
+  scale_y_continuous(breaks = breaks, limits = c(0,8))+
+  geom_point(aes(x = 6, y = 4),size = 2)
+
+```
+
+
+
+## Mixed Strategies
+\begin{itemize}
+  \item As it is illustrated through the graph, the Nash Equilibrium will be $\{6,4\}.$
+  \item Understand this conclusion as this: They will increase their strategies (in terms of numbers) until the Best Response Functions of both players intersect, which is $\{6,4\}$.
+\end{itemize}
+
+## Mixed Strategies
+\begin{itemize}
+  \item In order to understand the mixed strategies, we will introduce the concept of Expected Payoff, in which players will try to maximize their expected payoff.
+  \item Actually we have shown the implementation of Expected Payoff concept with continuous case in previous pages, in order to understand it there should also be an example where we implement it in discrete game. 
+\end{itemize}
+
+## Matching Pennies
+\begin{itemize}
+  \item Remember from the previous chapter in which we were trying to solve Matching Pennies game and we indicated that we have to have a different tool to solve it.
+  \item We will solve it through Expected Payoff, by attributing probabilities for each of strategies.
+  \item Let's say probability of first player playing head is $p$, then playing tail will be $1-p$. And for second player playing head $q$ and tail will be $1-q$.
+\end{itemize}
+
+
+
+$$\begin{NiceTabular}{cccc}[cell-space-limits = 3pt]
+&&q&(1-q)\\
+&&H&T\\
+p&H&\Block[hvlines]{2-2}{}(1,-1)&(-1,1)\\
+(1-p)&T&(-1,1)&(1,-1)
+\end{NiceTabular}$$
+
+## Matchin Pennies
+\begin{itemize}
+  \item According to this matrix, we would represent the Expected Payoff of first player as:\\
+  $EP_1 = p \times q \times 1 + p \times (1-q) \times (-1)+ (1-p) \times q \times (-1) + (1-p) \times (1-q) \times 1 $
+  $$EP_1 = 4pq -2p -2q +1$$
+\end{itemize}
+
+## Matchin Pennies
+\begin{itemize}
+  \item In order to find the equilibrium, we would take the partial derivative with respect to first player's probability and equalize to zero, to maximize the Expected Payoff:
+  $$\frac{\partial{EP_1}}{\partial{p}}=4q-2=0$$
+  $$q = 0.5$$
+  \item Since the Expected Payoff functions will be symmetric, we would get the same answer for the Expected Payoff of second player $(p = 0.5)$.
+\end{itemize}
+
+## Matching Pennies
+\begin{itemize}
+  \item This result that we have found indicates that, both players would meet at the point of equal probabilities for each strategy. 
+  \item If, assume that, second player attributed selecting first strategy as $ q = 0.1$, then the Expected Payoff of first player will be:
+  $$EP_1 = 0.4p-2p-0.2+1$$
+  $$EP_1 = -1.6p+0.8$$
+  \item In order to maximize this one, first player will decide as $p=0$, which means that he/she will certainly choose tail.
+\end{itemize}
+
+## Matching Pennies
+\begin{itemize}
+  \item However, knowing that first player choose tail, the second player will choose head.
+  \item Thus, as it can be seen that, the Best Response Functions of both players will be in a discrete shape, rather than continuous as our first example.
+\end{itemize}
+
+```{r echo=FALSE, message=FALSE, error=FALSE, warning=FALSE, fig.width=3,fig.height=2.3, fig.align='center'}
+
+library(ggplot2)
+
+x1 <- c(rep(0,6),0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1,rep(1,5))
+
+y1 <- c(0,0.1,0.2,0.3,0.4,rep(0.5,11),0.6,0.7,0.8,0.9,1)
+
+x2 <- c(0,0.1,0.2,0.3,0.4,0.5, rep(0.5,10), 0.6,0.7,0.8,0.9,1)
+
+y2 <- c(rep(1,5),1,0.9,0.8,0.7,0.6,0.5,0.4,0.3,0.2,0.1,0, rep(0,5))
+
+data <- data.frame(x1,y1,x2,y2)
+
+data |> 
+  ggplot(aes(x = x1, y = y1))+
+  geom_line()+
+  xlim(0,1)+
+  ylim(0,1)+
+  geom_line(aes(x = x2, y = y2), color = "red")+
+  theme_bw()+
+  xlab("First Player's Strategy (p)")+
+  ylab("Second Player's Strategy (q)")+
+  geom_point(aes(x = 0.5, y= 0.5), size = 2)
+
+```
+
+## Matching Pennies
+\begin{itemize}
+  \item To conclude the chapter, we can derive the formula for the Expected Payoff as:
+  $$EP = \sum_{i=1}^n p(X=x)\ x$$
+  \item This tells us that Expected payoff is equal sum of all payoffs that will be attributed by the player for each case times the probability that the player attributes. So, the probability of selecting tail is 0.5 and its payoff is 1 and for head is 0.5 and its payoff is -1, then the expected payoff will be equal to : $0.5 \times 1 + 0.5 \times (-1) = 0$
+  \item However, in the games, such as matching pennies, rather than marginal probabilities, we use the joint probabilities where we multiply the probabilities that is attributed by the players for a specific strategy.
+\end{itemize}

@@ -1,0 +1,133 @@
+---
+title: "Game Theory"
+subtitle: |
+  |  Different Types of Games: Hunt Game
+  |   (Static and Complete Information Games)
+output: beamer_presentation
+header-includes:
+  - \setbeamertemplate{itemize subitem}[square]
+  - \usepackage{nicematrix}
+  - \usepackage{xcolor}
+---
+
+## Contents
+\begin{itemize}
+  \item Hunt Game
+  \item Focal Point Games
+  \item Matching Pennies
+\end{itemize}
+
+## Hunt Game
+\begin{itemize}
+  \item Consider two different cavemen in stone age. In order to survive they have to hunt. Assume that there are two choices, namely hunt a stag or hunt a bison.
+\end{itemize}
+
+$$\begin{NiceTabular}{ccc}[cell-space-limits=3pt] & S & B\\
+S &\Block[hvlines]{2-2}{} (1,1)& (1,0)\\
+B & (0,1) & (3,3) \end{NiceTabular}$$
+
+\begin{itemize}
+  \item Since we evaluate static and complete information games, we assume that these two cavemen do not know what other caveman's decision on game. 
+  \item Thus, the Nash Equilibrium which would try to find uses just a hypothetical assumption for each player's decision on other player.
+\end{itemize}
+
+## Hunt Game
+\begin{itemize}
+  \item We can show it mathematically:
+\end{itemize}
+$$\{\nexists s_1^{'} \in S_1 : u_1(s_1^{'},s_2) > u_1(s_1,s_2)\} \wedge \{\nexists s_2^{'} \in S_2 : u_2(s_1,s_2^{'}) > u_2(s_1,s_2)\}$$
+\begin{itemize}
+  \item This notation represents that there is not any other strategy for first player ($s_1^{'}$) which is an element of all other possible strategies for first player ($S_1$), such that the utility of first player for all other possible strategies and second players Nash strategy ($s_2$) is bigger than the utility of first player for Nash strategies of first and second player (the first part) and ($\wedge$) there is not any other strategy for second player ($s_2^{'}$) which is an element of all other possible strategies for second player ($S_2$), such that the utility of second player for all other possible strategies and first players Nash strategy ($s_1$) is bigger than the utility of second player for Nash strategies of first and second player.
+\end{itemize}
+
+## Hunt Game
+\begin{itemize}
+  \item As you might guess there are two different Nash Equilibriums:
+\end{itemize}
+$$NE_1 = \{S,S\} \;,\; NE_2 = \{B,B\}$$
+
+\begin{itemize}
+  \item If the first player chooses to go for stag, then the optimal choice for second player is to go for stag as well. And if the first person expects second player to go for a stag, then he/she will stick to stag.
+\end{itemize}
+
+## Hunt Game
+\begin{itemize}
+  \item And this is also valid for the bison as well. Since bison will give more meat than a stag, the payoff for each player is higher in bison. And if a player expects other to go for a bison, he/she will not deviate to stag.
+  \item However, if one of them chooses stag and other one chooses bison, the player who chose bison will not be able to hunt the bison by him/herself, thus its payoff is 0. 
+\end{itemize}
+
+## Hunt Game
+\begin{itemize}
+  \item However, consider a case where the payoff that each player will get from a stag is very near to the payoff that each player will get when both choose bison is very near.
+\end{itemize}
+
+$$\begin{NiceTabular}{ccc}[cell-space-limits=3pt] &S&B\\
+S &\Block[hvlines]{2-2}{} (9,9) & (9,0)\\
+B & (0,9) & (10,10)\end{NiceTabular}$$
+\begin{itemize}
+  \item Since in this case, the payoff that players will receive from selecting to hunt a stag is not much lower than the payoff that both players will receive when they select to hunt a bison.
+  \item This makes much more hard to select to hunt a bison, due to riskiness to not receive the payoff of a stag. We call these types of games Risk Dominated games, because of risk of selecting a bison is higher than previously.
+\end{itemize}
+
+## Focal Point Games
+\begin{itemize}
+  \item Consider two person, who have arrived to New York City at the same time. They are unaware of their presence. And they were told that, if they could find each other in New York City (without previously communicated with each other), then they will win a big prize.
+  \item Then where should both choose to go? They should choose where every person would meet. Manhattan is a part of an area in New York City that can be attributed this feature.
+  \item Thus, the Manhattan will be focal point of this game where both find each other.
+\end{itemize}
+
+## Focal Point Games
+\begin{itemize}
+  \item We can give several examples from the book of Game Theory with Economic Applications.
+  \begin{itemize}
+    \item Name "heads" or "tails". If you and your partner name the same, you both win a prize; otherwise, you win nothing.
+    \item Circle one of the following numbers: 7, 100, 13, 261, 99, 555. You win if both your partner circle the same number.
+    \end{itemize}
+\end{itemize}
+
+
+## Focal Point Games
+\begin{itemize}
+  \item Consider a case where both players were given a 4 boxes, which one of them is red and remaining boxes are black. And players are expected to choice the same box.
+\end{itemize}
+
+\begin{center}
+  \fboxsep=6mm \fboxrule=1mm
+\fcolorbox{black}{black}{\null}
+    \fboxsep=6mm \fboxrule=1mm
+\fcolorbox{black}{black}{\null}
+\end{center}
+\begin{center}
+  \fboxsep=6mm \fboxrule=1mm
+\fcolorbox{black}{black}{\null}
+    \fboxsep=6mm \fboxrule=1mm
+\fcolorbox{black}{red}{\null}
+\end{center}
+
+\begin{itemize}
+  \item Since, the red one is only one, it can be separated from the other boxes (The main and only feature which separates the red box from other boxes).
+\end{itemize}
+
+
+## Focal Point Games
+\begin{itemize}
+  \item As you might guess, two players are going to select the red box, and reach an equilibrium, because of the reasons that we have explained.
+  \item There are collusion and coordination games, where both players' payoff will be great increase by applying a coordination with each other.
+\end{itemize}
+
+
+## Matching Pennies
+\begin{itemize}
+  \item In the Matching Pennies game, consider two person selects a side of a coin (either tail or head) simultaneously. If both select a head or tail, then first player will gain and second player will lose. If both select different sides, then first player would lose and second player will gain.
+\end{itemize}
+
+$$\begin{NiceTabular}{ccc}[cell-space-limits=3pt]&H&T\\
+H&\Block[hvlines]{2-2}{}(1,-1)&(-1,1)\\
+T&(-1,1)&(1,-1)\end{NiceTabular}$$
+
+## Matching Pennies
+\begin{itemize}
+  \item As you might guess, this game doesn't have any Nash Equilibrium.
+  \item Consider that first player selected Head. Then second player would choose Tail. However, if first player expects second player to play Tail, then he/she would change its preference, and deviate to Tail. Thus, we can reach an equilibrium in this case (for now).
+  \item So, in order to find the equilibrium of this game, we would employ a new method, Mixed Strategies. This method will handled in next chapter.
+\end{itemize}
