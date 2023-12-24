@@ -1,0 +1,178 @@
+---
+title: "Game Theory"
+subtitle: "Oligopolies"
+output: beamer_presentation
+header-includes:
+  - \setbeamertemplate{itemize subitem}[square]
+  - \usepackage{amsmath}
+---
+## Contents
+\begin{itemize}
+  \item A Glance into Monopolies
+  \item Cournot Game
+  \item Bertrand Game
+\end{itemize}
+
+## Monopolies
+\begin{itemize}
+  \item A monopoly represents a case where only a firm produces a specific commodity or product.
+  \item According to the Classical Marginal Theory, since there is only one firm in the industry, the price is exogenous. Meaning that the firm is the sole determinant of the market price rather than price-taker such as in perfect-competitive markets.
+\end{itemize}
+
+## Monopolies
+\begin{itemize}
+  \item A simple examination of monopoly is through the profit maximization problem. Consider this function of a profit for the monopoly:
+  $$\pi = P \times Q- MC \times Q$$
+  \item And if we assume the demand function for this product as:
+  $$P=a-bQ$$
+\end{itemize}
+
+## Monopolies
+\begin{itemize}
+  \item As you can see, we can replace the price with the demand function.
+  $$\pi = (a-bQ) \times Q - MC \times Q$$
+  \item Thus if we take the partial derivative of this function with respect to quantity (Q) and equalize it to zero, we would get the profit maximizing quantity:
+  $$\frac{\partial{\pi}}{\partial{Q}}=a-2bQ-MC=0$$
+  $$\frac{a-MC}{2b}=Q^{*}$$
+\end{itemize}
+
+## Monopolies
+\begin{itemize}
+  \item The reason why we have given a brief summary of monopolies is that We will examine the Cournot and Bertrand games in terms of profit maximization problems. So this tool will be beneficial on our examinatio of oligopolies.
+\end{itemize}
+
+## Cournot
+\begin{itemize}
+  \item We know that oligopolies consist of a few number of firms which dominate a specific industry.
+  \item In Cournot Game, firms will compete with each other in terms of quantity produced. Where they are price takers, as in the perfect competitive markets.
+  \item Consider two sellers of apples in a bazaar, who sell identical apples. They bring their apples at the same time, without knowing each others quantity. 
+\end{itemize}
+
+## Cournot
+\begin{itemize}
+  \item Since the apples are identical, they will be sold at the same price level.
+  \item And additionally and most importantly, the number of apples in the bazaar will affect the price level. We can show it as:
+  $$P=a-bQ \;\;\;\;\;\; Q=\{q_1+q_2:(q_1>0) \land (q_2>0)\}$$
+\end{itemize}
+
+## Cournot
+\begin{itemize}
+  \item Do not forget that Cournot and Bertrand games are static continuous games that players select their choices (quantity,price) simultaneously. 
+  \item Because in Cournot firms compete in terms of quantities, rather than prices (prices are determined by the total quantity), by giving the demand function for this product, we can find the equilibrium:
+  $$P=a-bQ$$
+\end{itemize}
+
+## Cournot
+\begin{itemize}
+  \item As we did in the monopoly, we can use the profit function for finding equilibrium:
+  $$\pi_1 = (a-bq_1-bq_2) \times q_1 - MC_1 \times q_1$$
+  $$\pi_2 = (a-bq_1-bq_2) \times q_2 - MC_2 \times q_2$$ \\
+  $$\frac{\partial{\pi_1}}{\partial{q_1}} = a-2bq_1-bq_2-MC_1 = 0$$
+  $$\frac{\partial{\pi_2}}{\partial{q_1}} = a - bq_1 - 2bq_2 - MC_2 = 0$$ \\
+  $$q_1^* = \frac{a-bq_2-MC_1}{2b}$$
+  $$q_2^* = \frac{a-bq_1-MC_2}{2b}$$
+\end{itemize}
+
+## Cournot
+\begin{itemize}
+  \item Thus, if we assume these equalities for demand function and marginal costs of these two firms as:
+  $$P = 10 - 2Q \;\;\;\;\;\; MC_1 = 2 \;\;\;\;\;\; MC_2 = 3$$
+  \item Then the optimal solutions for firms will be:
+  $$q_1^* = \frac{10-2q_2-2}{4}$$
+  $$q_2^* = \frac{10-2q_1-4}{4}$$
+  \item Thus, if we plug the one of the equations to other, we would get the Cournot Nash Equilibrium where both firms will not change its strategies.
+\end{itemize}
+
+## Cournot
+
+```{r echo = FALSE, warning=FALSE, error=FALSE, message=FALSE}
+library(ggplot2)
+```
+
+```{r echo = FALSE, warning=FALSE, error=FALSE, message=FALSE,fig.width=4,fig.height=2.5, fig.align='left'}
+func_1 <- function(x){
+  ;4-2*x
+}
+
+func_2 <- function(x){
+  ;(10-2*x-4)/4
+}
+
+q_1 <- data.frame(func_1(0:2)) |> rbind(NA)
+q_2 <- func_2(0:3)
+
+data_1 <- data.frame(q_1,q_2)
+
+data_1 |> 
+  ggplot(aes(x = c(0:3), y = func_1.0.2.))+
+  geom_line()+
+  geom_line(aes(x = c(0:3), y = q_2), col = "red")+
+  scale_y_continuous(breaks = seq(0,4,0.5))+
+  theme_bw()+
+  xlab("q1")+ylab("q2")+
+  geom_point(aes(x = 5/3, y = 2/3), size = 3)+
+  annotate("text", x = 2, y = 0.8, label = "(1.66, 0.66)", size = 2)
+
+
+```
+\begin{itemize}
+  \item Since the marginal cost of second firm $MC_2$ is bigger than the first firm's $MC_1$, the optimal quantity is lower than first firm's.
+\end{itemize}
+
+## Bertrand
+\begin{itemize}
+  \item In Bertrand Competition, rather than based on quantities, firms compete in terms of prices, which is considered as more realistic, since firms in real life are not bound to any rules for prices (except for price controls by governments).
+  \item You may think that by establishing the prices through the competition based on quantities with the Cournot Competition, it is unreasonable to construct a competitive environment based on price. But the results will be very different from Cournot.
+\end{itemize}
+
+## Bertrand
+\begin{itemize}
+  \item Let's look at the assumptions that are collected from \textbf{\textit{Introduction to Game Theory and The Bertrand Trap}} by \textbf{\textit{Benjamin E. Hermalin}}.
+  \begin{itemize}
+    \item Firms produce homogenous products
+    \item Customers know the prices that firms selected
+    \item Customers do not incur any costs from switching firms
+    \item Both firms have same marginal cost
+    \item No capacity constraints on production
+    \item No future considerations
+  \end{itemize}
+\end{itemize}
+
+## Bertrand
+\begin{itemize}
+  \item Two important assumptions, fourth and fifth, makes Bertrand an important type of competition.
+  \item By having equal marginal costs for each firm, we prevent the cost advantages between firms. It will be seen that the cost advantageous firm will be the only player in the industry.
+  \item By adding the fifth assumption, we do not constrain any firm on producing. Since
+  there will be sharp transition of customers, this assumption is important.
+\end{itemize}
+
+## Bertrand
+
+\begin{itemize}
+  \item Let's look into the intuition behind the Bertrand. Do not forget, again, that the Bertrand Game is also a static type game as Cournot Game, where players choose simultaneously.
+  \item Consider that the first firm choose $\$10$ for a product which has $\$5$ of marginal cost (for both firms).
+  \item Then second firm will choose a number that is so close to $\$10$ but lower than that (let's say $\$9.8$). This is because, since consumers know the prices, the logical to thing them to do is purchasing at lower prices. So the second firm will spur all the market and the first will make 0 profit.
+  \item Thus, on the other hand, since the first firm makes 0 profit, it will change its choice and will determine the price at a lower level of $\$9.8$ (let's say $\$9.7$)
+\end{itemize}
+
+## Bertrand
+\begin{itemize}
+  \item By understanding this process, one can predict where the equilibrium will be set.
+  \item Since neither firm would not determine price level below the marginal cost, the prices will be set exactly at the marginal cost, where marginal cost is same for both firms.
+  \item At the marginal cost price both firms will make 0 profits. This is argued as the one of the most important conclusions of perfect competitive markets, where firms had to compete in terms of prices.
+  \item The marginal cost price is Nash Equilibrium. Consider a firm that decreases its price below marginal cost. Even though it satisfies the whole demand in market, because marginal cost is higher than price, it will make negative profits.
+  \item Consider, on the other hand, one of them increased price. Since the other firm has lower prices, this firm which increased its price will not be able to sell any product.
+\end{itemize}
+## Bertrand
+\begin{itemize}
+  \item From the function, the information that we have given can be seen. 
+  \item In this case n represent the firm number, m represents the number of firms that determined their prices as minimum. D represents the total demand for product.
+  \item Then, we can represent the choices and profit function of firms as this:
+     \[ \pi_n = \begin{cases} 
+      0 & \textrm{if} \;\; P_n>P_{min} \\
+      \frac{1}{m} \times D \times P_n - (MC \times q_n) & \textrm{if} \;\; P_n = P_{min} \\
+      D \times P_n - (MC \times q_n) & \textrm{if} \;\; P_n < P_{min}
+   \end{cases}
+\]
+\item Then, we can conclude that in Bertrand Competition, firms will make zero profit, which is considered as undesirable from the point of view of firms.
+\end{itemize}

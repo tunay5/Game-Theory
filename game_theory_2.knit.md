@@ -1,0 +1,116 @@
+---
+title: "Game Theory"
+subtitle: |
+  | Nash Equilibrium 
+  | (Static and Complete Information Games)
+output: beamer_presentation
+header-includes:
+  - \setbeamertemplate{itemize subitem}[square]
+  - \usepackage{nicematrix}
+---
+## Contents
+\begin{itemize}
+  \item Concept of Nash Equilibrium
+  \item Intuition Behind Prisoners' Dilemma
+  \item Pareto Optimality
+\end{itemize}
+
+## Nash Equilibrium
+\begin{itemize}
+  \item Nash Equilibrium is simply the solution of a game where each player is not able to increase its utility by deviating from the strategy of the Nash Equilibrium.
+  \item When we the game is not solvable by eliminating the choices of players, the Nash Equilibrium can be used.
+  \end{itemize}
+  
+## Nash Equilibrium
+
+\begin{itemize}
+\item Consider this case, where we cannot eliminate any choice:
+\end{itemize}
+$$\begin{NiceTabular}{ccc}[cell-space-limits=4pt]
+  &A &B\\
+  A&\Block[hvlines]{2-2}{}(1,0)&(0,-2)\\
+  B&(-2,0)&(0,1)
+  \end{NiceTabular}$$
+  
+\begin{itemize}
+  \item Since we cannot eliminate any choice, we can use Nash Equilibrium
+\end{itemize}
+
+## Nash Equilibrium
+\begin{itemize}
+  \item Consider the first player choose $A$, then the second player would play $A$ as well.   \item In order to be this case to be a Nash Equilibrium, we have to examine this case from the point of view of first player As well.
+  \item If the first player expects second player to play $A$, will he/she will deviate from his/her choice of $A$?
+  \item The answer is no. Since the $u_1(A,A)>u_1(B,A)$, he/she will stick to his/her inital choice, $A$.
+\end{itemize}
+
+## Nash Equilibrium
+\begin{itemize}
+  \item Consider that first player played $B$. Then, in order to maximize his/her payoff, second player will also play $B$.
+  \item The same intuition that we should apply here. Assume that first player expects second player to play $B$. Then he/she will not deviate his/her initial choice of $B$, because in this case $u_2(B,B)>u_2(B,A)$. 
+\end{itemize}
+
+## Nash Equilibrium
+\begin{itemize}
+  \item So, the Nash Equilibriums of this game will be:
+  $$NE_1 = \{A,A\}\;,\;NE_2 = \{B,B\}$$
+  \item This means that, under the assumption of rationality and every player knows each player is rational, both players will not change their decisions from these two solutions.
+\end{itemize}
+
+
+## Prisoners' Dilemma
+\begin{itemize}
+  \item One of the most famous game, known as Prisoners' Dilemma. In this game, the Nash Equilibrium is unique. And main feature of this equilibrium is that even though there is more beneficial solution where both players will receive more payoff, this equilibrium occurs due to the rationality of players.
+  \item The name actually comes from interrogation of two players, which are suspected on a crime. Two players do not one what other player will do and they didn't communicate beforehand. So it is a simultaneous game.
+  \item Consider they have two choices: confess the crime or remain silent. The payoff matrix can be illustrated as:
+\end{itemize}
+
+$$\begin{NiceTabular}{ccc}[cell-space-limits = 3pt]
+&Remain Silent&Confess\\
+Remain Silent & \Block[hvlines]{2-2}{}(-5,-5)&(0,-10)\\
+Confess&(-10,0) & (-6,-6) 
+\end{NiceTabular}$$
+
+## Prisoners' Dilemma
+\begin{itemize}
+  \item The main idea behind this game is if both remain silent, then they will get 5 years of imprisonment, thus the payoff for each is $-5$. If one of them deviates, confessing the crime, then the player who remains silent will get 10 years of imprisonment and the player that confesses will not be punished. And if both of them confess, then they will be imprisoned, but get much longer imprisonment than the case of both of them remain silent, since they accepted the crime.
+  \item So we can find the Nash Equilibrium as:
+  \end{itemize}
+  $$NE = \{\textrm{Confess,Confess}\}$$
+
+## Pareto Optimality
+\begin{itemize}
+  \item The classical view of utility indicates that, the rationality of individuals or players will lead to the best conclusion.
+  \item However, we have seen that the rational choice for players sometimes leads to a less wanted conclusion when it comes to the payoff (as it is in the Prisoners' Dilemma example), when each player has opportunity to exploit the other player.
+  \item Consider the parents (father and mother), which have two choices on the raising their child:
+\end{itemize}
+  $$\begin{NiceTabular}{ccc}[cell-space-limits=3pt]
+  &C&NC\\
+  C&\Block[hvlines]{2-2}{}(0,0)&(-2,2)\\
+  NC&(2,-2)&(-1,-1)
+  \end{NiceTabular}$$
+
+## Pareto Optimality
+\begin{itemize}
+  \item For instance, assume that first player (father) choose to care (C) he child. Then maximizing choice for the second player (mother) to not care (NC). 
+  \item However, if the father expects mother not care, then he will also choose not care. Thus we cannot say Nash Equilibrium.
+  \item But for the choice of $\{NC,NC\}$ is going to be unique Nash Equilibrium of this game.
+\end{itemize}
+## Pareto Optimality
+\begin{itemize}
+  \item As you can understand, the payoffs of Nash Equilibrium for this game is not a Pareto Optimal solution. 
+  \item Since there is a choice where both players increase their payoffs, which is $\{0,0\}$
+  \item I with mathematical notations, pareto optimality can be shown as:
+    $$\{\nexists \omega^{'} \in \Omega\ : \forall i \;\; u_i(\omega^{'} ) \geq u_i(\omega) \wedge i \in \{1,2,3...n\}\}$$
+    $$n=2$$
+\begin{itemize}
+  \item This means, there is not an allocation ($\omega^{'}$) which is an element of all possible allocations ($\Omega$)such that for all $i$ its utility ($u_i(\omega^{'})$) is bigger than the utility that each player receive from the Nash Equilibrium allocation ($u_i(\omega)$).
+\end{itemize}
+  
+\end{itemize}
+
+## Pareto Optimality
+\begin{itemize}
+  \item As we have indicated, the main feature of Prisoners' Dilemma game is the equilibrium that game reaches is not a best solution for both of players. 
+  \item Hence the Prisoners' Dilemma will not result with a solution which is pareto optimal, which means there are, at least one, choice which increases payoffs of both players.
+\end{itemize}
+
