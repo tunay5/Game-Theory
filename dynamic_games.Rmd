@@ -1,0 +1,113 @@
+---
+title: "Game Theory"
+subtitle: "Dynamic Games With Perfect Information"
+output: beamer_presentation
+header-includes:
+  - \setbeamertemplate{itemize subitem}[square]
+  - \usepackage{nicematrix}
+  - \usepackage{tikz}
+---
+
+## Contents
+\begin{itemize}
+  \item Dynamic Games
+  \item Notations
+  \item Nash Equilibrium
+  \item Subgame Perfect Nash Equilibrium
+\end{itemize}
+
+## Dynamic Games
+\begin{itemize}
+  \item In contrast to static games as we have evaluated in previous chapters, in dynamic games we encounter with sequential process of playing games within players.
+  \item This sequentiality of dynamic games, it is believed, represent the real world in a more appropriate way compared to static games.
+  \item The difference doesn't based on the time variable. Rather there is an perfect information in dynamic games (not necessarily all dynamic games are perfect information games).
+\end{itemize}
+
+## Dynamic Games
+\begin{itemize}
+  \item A dynamic game is represented with tree form. However, from this tree from, one can reflect the game into matrix form. Let's look at:
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5,font=\footnotesize]
+  \tikzstyle{solid node}=[circle,draw,inner sep=1.5]
+  \tikzstyle{level 1}=[level distance=15mm,sibling distance=3.5cm]
+  \tikzstyle{level 2}=[level distance=15mm,sibling distance=1.5cm]
+  \tikzstyle{level 3}=[level distance=15mm,sibling distance=1cm]
+  
+  \node(0)[solid node,label=above:{$1$}]{}
+    child{node[solid node,label=above left:{$2$}]{}
+      child{node[solid node,label=below:{$(3,3)$}]{} edge from parent node[left]{$a$}}
+      child{node[solid node,label=below:{$(1,2)$}]{} edge from parent node[right]{$b$}}
+      edge from parent node[left,xshift=-5]{$a$}
+    }
+    child{node[solid node,label=above right:{$2$}]{}
+      child{node[solid node,label=below:{$(1,1)$}]{} edge from parent node[left]{$a$}}
+      child{node[solid node,label=below:{$(2,2)$}]{} edge from parent node[right]{$b$}}
+      edge from parent node[right,xshift=5]{$b$}
+    };
+\end{tikzpicture}
+\end{center}
+
+## Notations
+\begin{itemize}
+  \item The game that is represented in previous page can be shown as $\langle{N,H,P,(\succsim_i)}\rangle$.
+  \item In this notation $N$ represent the number of players. For the game that we have been examining $N=2$.
+  \item For $H$, this one represents the set of each histories for every stage of the game:
+\end{itemize}
+  $$H=\{\emptyset,a,b,(a,a),(a,b),(b,a),(b,b)\}$$
+  
+\begin{itemize}
+  \item When it comes to $P$, it actually corresponds to the the function of history $P(h)$ that would give us which player has the turn to play. For example:
+  $$P(a)=2 \;\;\; \textrm{or}\;\;\; P(\emptyset)=1$$
+  \item When it comes to $\succsim_i$, this one represent the preference relation of player $i \in{N}$
+\end{itemize}
+
+## Notations
+\begin{itemize}
+
+  \item And we should also indicate that there are strategies for each player. For the first player it is obvious:
+  $$S_1 = \{a,b\}$$
+  \item However, for the second player, the strategies will be interpreted differently:
+  $$S_2 = \{aa,ab,ba,bb\}$$
+  \item Since the strategy of each player is determined before the game starts, the second has to determine what he/she will choose before hand. Thus because of this there occurs four different strategies.
+\end{itemize}
+
+## Notations
+\begin{itemize}
+  \item According to the strategies of second player, let's say he/she chooses the $\{ba\}$.
+  \item Based on this strategy, if the first player chooses $a$ then the strategy follows to play $b$. And if the first player plays $b$, then second player choose the $a$.
+  \item So, the first action represents the response in case of first player chooses $a$, and the second action represents the action in case of first player plays $b$.
+\end{itemize}
+
+## Nash Equilibrium
+\begin{itemize}
+  \item Based on these information, we can illustrate the matrix form of this game as:
+\end{itemize}
+$$\begin{NiceTabular}{ccccc}[cell-space-limits=4pt]
+  &aa &ab &ba &bb\\
+  a&\Block[hvlines]{2-4}{}(3,3)&(3,3)&(1,2)&(1,2)\\
+  b&(1,1)&(2,2)&(1,1)&(2,2)
+  \end{NiceTabular}$$
+
+## Nash Equilibrium
+\begin{itemize}
+  \item As we did with static games, the Nash Equilibrium will be used for finding the equilibrium strategy in dynamic games.
+  \item A Nash Equilibrium of a dynamic game with perfect information is a strategy profile $s^*$ such that for every player $i \in N$ we have:
+  $$O(s^*_{-i},s^*_i) \succsim_iO(s^*_{-i},s_i)$$
+  \item This notation represents that there is such strategy for each player $(s^*_{-i},s^*_i)$ that would yield highest outcome possible. Thus they will not deviate from their strategies, which is the explanation of the existence of Nash Equilibrium.
+\end{itemize}
+
+## Nash Equilibrium
+\begin{itemize}
+  \item From the matrix form of this game, we can find the Nash Equilibriums as:
+  $$NE_1 = \{(a,aa)\} \;\;\; NE_2 = \{(a,ab)\} \;\;\; NE_3 = \{(b,bb)\}$$
+  \item Based on the matrix form there are three different Nash Equilibria. However, you will see that two of these Nash Equilibria will not make sense, and we will have only one solution.
+\end{itemize}
+
+## Subgame Perfect Nash Equilibrium
+\begin{itemize}
+  \item As you might noticed that selecting $b$ by first player is not a rational idea. Since if first player plays $a$, because second player also plays $a$, they will get both payoff 3.
+  \item However, in case of first player selects $b$, then because second player will choose $b$, their payoffs will be 2. Based on this comparison, selecting $b$ doesn't make sense from the first player's point of view.
+  \item We call this process Backward Induction. As the game that we are examining with perfect information and rational players, the first player can choose the action that would yield highest payoff, with the condition of second player's choice.
+\end{itemize}
