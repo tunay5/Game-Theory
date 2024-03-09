@@ -1,8 +1,7 @@
 ---
 title: "Game Theory"
 subtitle: |
-  | Nash Equilibrium 
-  | (Static and Complete Information Games)
+  | Static and Complete Information Games
 output: beamer_presentation
 header-includes:
   - \setbeamertemplate{itemize subitem}[square]
