@@ -1,8 +1,7 @@
 ---
 title: "Game Theory"
 subtitle: |
-  |  Different Types of Games: Hunt Game
-  |   (Static and Complete Information Games)
+  |   Static and Complete Information Games
 output: beamer_presentation
 header-includes:
   - \setbeamertemplate{itemize subitem}[square]
